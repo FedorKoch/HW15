@@ -1,20 +1,44 @@
-﻿// HW15.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
 
-#include <iostream>
+void even_numbers(int n) // Function for getting and printing even numbers
+{
+	for (int i = 1; i <= n / 2; ++i) 
+	{
+		std::cout << 2 * i << " ";
+	}
+}
+
+void odd_numbers(int n) // Function for receiving and printing odd numbers
+{
+	for (int i = 0; i < n/2; ++i)
+	{
+		std::cout << 2 * i + 1 << " ";
+	}
+	std::cout << n;
+}
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int x;
+	int n;
+
+	std::cout << "The program outputs even or odd numbers up to the specified number. Enter a number: ";
+	std::cin >> n;
+
+	std::cout << "To output even numbers, enter 1. To output odd numbers, enter 2. Enter your choice: ";
+	std::cin >> x;
+	
+	switch (x) 
+	{
+		case 1:
+			even_numbers(n);
+			break;
+		case 2:
+			odd_numbers(n);
+			break;
+		default:
+			std::cout << "choice is undefined";
+			break;
+	}
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
